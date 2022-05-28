@@ -1,0 +1,8 @@
+.hideformspan span {display: none;position: absolute;color: red;}
+.loader{opacity:0.6;pointer-events:none}
+#signinoutputmsg {text-align: center;margin: auto;width: 27%;}
+.dataTables_length{width: 50%;display: flex;justify-content: left;margin-left: 2rem;}
+.dataTables_length > label{margin-bottom: 5px;font-weight: bold;display: flex;align-items: baseline;justify-content: center;}
+.dataTables_length > label .form-control{margin: 0 1rem;}
+#DataTables_Table_0_filter > label{display: flex;align-items: baseline;justify-content: center;margin-right: 2em;}
+.no-print{display:none}

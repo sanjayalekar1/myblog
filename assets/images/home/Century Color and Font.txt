@@ -1,0 +1,8 @@
+Font Used: 	Corporate S Regular
+		Corporate S Bold
+		Corporate S Demi
+		Corporate S Light 
+		Bauer Bodoni Oldstyle Figures
+
+Colors: 	Red #9F1635
+		Blue #0A5D7E

@@ -1,0 +1,283 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType text/css "access 1 year"
+ExpiresByType text/html "access 1 year"
+ExpiresByType application/pdf "access 1 year"
+ExpiresByType application/json "access 1 year"
+ExpiresByType text/x-javascript "access 1 year"
+ExpiresByType application/x-shockwave-flash "access 1 year"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 1 year"
+</IfModule>
+## EXPIRES CACHING ##
+
+<IfModule mod_deflate.c>
+  # Compress HTML, CSS, JavaScript, Text, XML and fonts
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+  AddOutputFilterByType DEFLATE application/x-font
+  AddOutputFilterByType DEFLATE application/x-font-opentype
+  AddOutputFilterByType DEFLATE application/x-font-otf
+  AddOutputFilterByType DEFLATE application/x-font-truetype
+  AddOutputFilterByType DEFLATE application/x-font-ttf
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE font/opentype
+  AddOutputFilterByType DEFLATE font/otf
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE image/x-icon
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+
+  # Remove browser bugs (only needed for really old browsers)
+  BrowserMatch ^Mozilla/4 gzip-only-text/html
+  BrowserMatch ^Mozilla/4\.0[678] no-gzip
+  BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+  #Header append Vary User-Agent
+</IfModule>
+
+<Files .env>
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files artisan>
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files composer.json>
+    Order allow,deny
+    Deny from all
+</Files>
+
+Redirect 301 /customer-testimonials /client-testimonials
+Redirect 301 /customer-testimonials-test /client-testimonials
+Redirect 301 /century-live/ /
+Redirect 301 /century-live /
+Redirect 301 /sitemap /
+Redirect 301 /forgot-password /
+Redirect 301 /real-estate-glossary /
+Redirect 301 /offer-zone /
+Redirect 301 /company/support/existing-customer /
+Redirect 301 /login /
+Redirect 301 /reset-password-otp /
+Redirect 301 /?utm_source=blog_rising_story_in_north_bangalore /
+Redirect 301 /company/support/century-plus /century-connect
+Redirect 301 /company/terms-and-conditions /terms
+Redirect 301 /company/privacy-policy /privacy
+Redirect 301 /profile/vivekananda-nayak /key-management
+Redirect 301 /profile/madhusudan-pai /key-management
+Redirect 301 /profile/maninder-chhabra /key-management
+Redirect 301 /profile/pushpak-pusegaonkar /key-management
+Redirect 301 /profile/nagendra-m /key-management
+Redirect 301 /profile/ravindra-pai /key-management
+Redirect 301 /profile/ashwin-pai /key-management
+Redirect 301 /profile/dev-patel /key-management
+Redirect 301 /profile/mahesh-prabhu /key-management
+Redirect 301 /residential/projects/plots?utm_source=blog_gated_community_plots /projects
+Redirect 301 /residential/projects/plots?utm_source=blog_gated_community_plot /projects
+Redirect 301 /residential/projects?page=1&per-page=6 /projects
+Redirect 301 /residential/projects?page=2&per-page=6 /projects
+Redirect 301 /commercial/projects /projects
+Redirect 301 /residential/projects/plots /projects
+Redirect 301 /residential/projects/apartments /projects
+Redirect 301 /residential/projects/villas /projects
+Redirect 301 /project/search /projects
+Redirect 301 /project/residential/century-wintersun?utm_source=Ethos_blog_link_ref&utm_medium=Blog&utm_campaign=Ethos_blog_link_ref /projects
+Redirect 301 /project/commercial/century-corbel /projects
+Redirect 301 /project/search?page=1&per-page=6 /projects
+Redirect 301 /project/search?page=2&per-page=6 /projects
+Redirect 301 /project/search?status=ongoing&page=1&per-page=6 /projects
+Redirect 301 /project/search?status=ongoing&page=2&per-page=6 /projects
+Redirect 301 /project/search?status=completed&page=1&per-page=6 /projects
+Redirect 301 /project/search?status=completed&page=2&per-page=6 /projects
+Redirect 301 /blog/mds-desk-what-to-expect-in-2019 /blog
+Redirect 301 /blog/investing-in-a-home-a-burden-or-a-benefit /blog
+Redirect 301 /blog/the-importance-of-excellence /blog
+Redirect 301 /blog/north-bangalore-the-rising-story-in-bangalore-real-estate /blog
+Redirect 301 /blog/gated-community-plot-bangalore /blog
+Redirect 301 /blog/choose-a-home-that-allows-work-life-balance /blog
+Redirect 301 /blog/jakkur-the-fastest-developing-locality-in-north-bangalore /blog
+Redirect 301 /blog/why-is-indian-real-estate-an-attractive-investment-option-for-nri /blog
+Redirect 301 /blog/the-changing-landscape-of-north-bangalore /blog
+Redirect 301 /blog/know-your-neighborhood---yelahanka /blog
+Redirect 301 /blog/know-your-neighborhood---richmond-roadrichmond-town /blog
+Redirect 301 /blog/plots-or-apartments-whats-the-wiser-choice /blog
+Redirect 301 /blog/north-bangalore-an-attractive-real-estate-destination-of-the-it-city /blog
+Redirect 301 /blog/north-bengaluru-to-witness-over-140-surge-in-office-stock-by-2021 /blog
+Redirect 301 /blog/simple-steps-for-an-eco-friendly-home /blog
+Redirect 301 /blog/what-happy-customers-say-about-us /blog
+Redirect 301 /blog/celebrate-ugadi-with-homemade-mango-kheer /blog
+Redirect 301 /blog/grow-wonder-vegetables-indoors-home /blog
+Redirect 301 /blog/young-homeowners-easy-home-loans /blog
+Redirect 301 /blog/union-budget-2018-for-real-estate-and-buyers /blog
+Redirect 301 /blog/organic-farming-secrets-narayan-reddy /blog
+Redirect 301 /blog/new-year-resolutions-for-your-home /blog
+Redirect 301 /blog/guide-to-organic-gardening /blog
+Redirect 301 /blog/bangalore /blog
+Redirect 301 /blog/real-estate-investing-in-north-bangalore-property /blog
+Redirect 301 /blog/real-estate-gain-more-investing-less /blog
+Redirect 301 /blog/rera-rolls-red-carpet-for-buyers /blog
+Redirect 301 /blog/tax-saving-best-time-is-now-to-invest-in-your-perfect-home /blog
+Redirect 301 /blog/vaastu-for-positive-energy-at-home /blog
+Redirect 301 /blog/home-tips-for-happy-diwali /blog
+Redirect 301 /blog/10-festive-season-tips /blog
+Redirect 301 /blog/pet-friendly-home /blog
+Redirect 301 /blog/halloween-haunted-home-party-ideas /blog
+Redirect 301 /blog/world-population-day /blog
+Redirect 301 /blog/home-hacks-diy-kitchen-tips /blog
+Redirect 301 /blog/world-elephant-day-nurture-an-elephant-save-a-forest /blog
+Redirect 301 /blog/world-vegan-month /blog
+Redirect 301 /blog/givebackgreen-greener-lifestyle-greener-earth /blog
+Redirect 301 /blog/tag/real-estate /blog
+Redirect 301 /blog/tag/bangalore /blog
+Redirect 301 /blog/tag/rera /blog
+Redirect 301 /blog/tag/axis-bank /blog
+Redirect 301 /blog/tag/finance-buddha /blog
+Redirect 301 /blog/tag/gst /blog
+Redirect 301 /blog/tag/hdfc-bank /blog
+Redirect 301 /blog/tag/home-loans /blog
+Redirect 301 /blog/tag/icici-bank /blog
+Redirect 301 /blog/tag/sbi-bank /blog
+Redirect 301 /blog/tag/real-estate-bangalore /blog
+Redirect 301 /blog/tag/apartments-in-bangalore /blog
+Redirect 301 /blog/tag/diamond-district /blog
+Redirect 301 /blog/tag/flats-in-bangalore /blog
+Redirect 301 /blog/tag/luxurious-villas /blog
+Redirect 301 /blog/tag/manipal-centre /blog
+Redirect 301 /blog/tag/metropolis /blog
+Redirect 301 /blog/tag/mg-road /blog
+Redirect 301 /blog/tag/plotted-developments /blog
+Redirect 301 /blog/tag/it-filing /blog
+Redirect 301 /blog/tag/vijaya-bank /blog
+Redirect 301 /blog/tag/hebbal /blog
+Redirect 301 /blog/tag/jakkur /blog
+Redirect 301 /blog/tag/north-bangalore /blog
+Redirect 301 /blog/tag/hennur-road /blog
+Redirect 301 /blog/tag/airport-road /blog
+Redirect 301 /blog/tag/yelahanka /blog
+Redirect 301 /blog/tag/budget-homes-in-bangalore /blog
+Redirect 301 /blog/tag/devanahalli /blog
+Redirect 301 /blog/tag/invest-in-property /blog
+Redirect 301 /blog/tag/rajarajeshwari-nagar /blog
+Redirect 301 /blog/tag/sarjapur-road /blog
+Redirect 301 /blog/tag/whitefield /blog
+Redirect 301 /blog/tag/built-up-area /blog
+Redirect 301 /blog/tag/real-estate-regulation-development-act /blog
+Redirect 301 /blog/tag/rera-act /blog
+Redirect 301 /blog/tag/super-built-up-area /blog
+Redirect 301 /blog/tag/ashada /blog
+Redirect 301 /blog/tag/buying-home /blog
+Redirect 301 /blog/tag/june-july /blog
+Redirect 301 /blog/tag/tax-saving /blog
+Redirect 301 /blog/tag/ayudha-puja /blog
+Redirect 301 /blog/tag/celebrations /blog
+Redirect 301 /blog/tag/durga-puja /blog
+Redirect 301 /blog/tag/dussehra /blog
+Redirect 301 /blog/tag/festive-season /blog
+Redirect 301 /blog/tag/lifestyle /blog
+Redirect 301 /blog/tag/neighbours /blog
+Redirect 301 /blog/tag/pets /blog
+Redirect 301 /blog/tag/century-artizen /blog
+Redirect 301 /blog/tag/century-breeze /blog
+Redirect 301 /blog/tag/century-ethos /blog
+Redirect 301 /blog/tag/home-buying /blog
+Redirect 301 /blog/tag/luxury-living /blog
+Redirect 301 /blog/tag/world-population-day /blog
+Redirect 301 /blog/tag/clean-kitchen /blog
+Redirect 301 /blog/tag/diy-kitchen-tips /blog
+Redirect 301 /blog/tag/home-hacks /blog
+Redirect 301 /blog/tag/kitchen-tips /blog
+Redirect 301 /blog/tag/ecosystem /blog
+Redirect 301 /blog/tag/elephant-habitat /blog
+Redirect 301 /blog/tag/elephant-state /blog
+Redirect 301 /blog/tag/elephants-in-karnataka /blog
+Redirect 301 /blog/tag/karnataka /blog
+Redirect 301 /blog/tag/world-elephant-day /blog
+Redirect 301 /blog/century-ethos-north-bengalurus-crown-jewel /blog
+Redirect 301 /blog/century-ethos-finest-luxury-residential-developments-in-north-bengaluru /blog
+Redirect 301 /blog/luxury-apartments-in-north-bangalore /blog
+Redirect 301 /blog/uncertainty-has-a-silver-lining /blog
+Redirect 301 /blog/covid-19-vaccine-development-progress /blog
+Redirect 301 /blog/the-best-micro-markets-to-invest-in-north-bengaluru /blog
+Redirect 301 /blog/mixed-use-boutique-development-century-Horizon /blog
+Redirect 301 /blog/best-micro-markets-to-invest-in-bangalore-in-2020 /blog
+Redirect 301 /blog/what-the-wealthy-do-with-their-money /blog
+Redirect 301 /blog?page=1&per-page=9 /blog
+Redirect 301 /blog?page=2&per-page=9 /blog
+Redirect 301 /blog?page=3&per-page=9 /blog
+Redirect 301 /blog?page=4&per-page=9 /blog
+Redirect 301 /blog?page=5&per-page=9 /blog
+Redirect 301 /blog?page=6&per-page=9 /blog
+Redirect 301 /jobs/current-openings /life-at-century
+Redirect 301 /company/working-culture /life-at-century
+Redirect 301 /joint-development /
+Redirect 301 /appreciation /
+Redirect 301 /channel-partners /
+Redirect 301 /refer-friends /referrals
+Redirect 301 /project/residential/century-infiniti /projects
+Redirect 301 /project/residential/century-corbel /projects
+Redirect 301 /project/residential/century-saras /projects
+Redirect 301 /project/residential/century-chimes /projects
+Redirect 301 /project/residential/century-commanders-vista /projects
+Redirect 301 /project/residential/century-celeste /projects
+Redirect 301 /project/residential/century-pragati /projects
+Redirect 301 /project/residential/century-marvel /projects
+Redirect 301 /project/residential/century-paradise /projects
+Redirect 301 /project/residential /projects
+Redirect 301 /project/search?status=ongoing /projects
+Redirect 301 /project/search?status=upcoming /projects
+Redirect 301 /project/search?status=completed /projects
+Redirect 301 /media/awards /awards
+Redirect 301 /media/press /press
+Redirect 301 /media/videos /videos
+Redirect 301 /media/century-times /media
+Redirect 301 /media/kit /media
+Redirect 301 /company/support/testimonials /customer-testimonials
+Redirect 301 /company/corporate-governance /corporate-governance
+Redirect 301 /company/associated-enterprises /associated-enterprises
+Redirect 301 /company/corporate-social-responsibility /social-responsibility
+Redirect 301 /company/key-management-team /key-management
+Redirect 301 /company/about-us /about
+Redirect 301 /company/contact /contact-us
+Redirect 301 /company/why-century /why-us
+Redirect 301 /joint-development /century-connect
+Redirect 301 /careers /life-at-century
+Redirect 301 /contact /contact-us
+Redirect 301 /residential/projects /projects
+Redirect 301 /index.php/ /
